@@ -440,7 +440,7 @@ impl<S: VhostUserSlaveReqHandler> SlaveReqHandler<S> {
             }
             MasterReq::SET_VRING_ENABLE => {
                 let msg = self.extract_request_body::<VhostUserVringState>(&hdr, size, &buf)?;
-                self.check_feature(VhostUserVirtioFeatures::PROTOCOL_FEATURES)?;
+                //self.check_feature(VhostUserVirtioFeatures::PROTOCOL_FEATURES)?;
                 let enable = match msg.num {
                     1 => true,
                     0 => false,
